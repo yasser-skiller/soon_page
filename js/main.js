@@ -176,7 +176,7 @@ $(function(){
 	
 	window.addEventListener('load',()=>{
 	  $("#qrcode").html("");
-		var txt = $.trim(`https://scnv.io/wrtz?qr=1`);
+		var txt = $.trim(`https://menu.street-cafe.net/menu.pdf`);
 		if(txt == '') {
 		  alert("Please enter text you want to embed in OR Code");
 		  return false;
