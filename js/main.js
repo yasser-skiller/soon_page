@@ -173,24 +173,25 @@
 //Qp-code
 
 $(function(){
+	//  $("#qr-gn").click(function(){
+	  window.addEventListener('load',()=>{
+		$("#qrcode").html("");
+		  var txt = $.trim(`https://menu.street-cafe.net/menu.pdf`);
+		 if(txt == '') {
+				 alert("Please enter text you want to embed in OR Code");
+				 return false;
+			}
+		  var size = `200x200`;
+		 var sizeSplit = size.split('x');
+		 var width = sizeSplit[0];
+		 var height = sizeSplit[1];
+		 generateQRcode(width, height, txt );
+		 return false;
+	  })
+	//  });
 	
-	window.addEventListener('load',()=>{
-	  $("#qrcode").html("");
-		var txt = $.trim(`https://menu.street-cafe.net/menu.pdf`);
-		if(txt == '') {
-		  alert("Please enter text you want to embed in OR Code");
-		  return false;
-		}
-		var size = `200x200`;
-		var sizeSplit = size.split('x');
-		var width = sizeSplit[0];
-		var height = sizeSplit[1];
-		generateQRcode(width, height, txt );
-		return false;
-	})
-  function generateQRcode(width, height, text) {
-	$('#qrcode').qrcode({width: width,height: height,text: text});
-  }
+	function generateQRcode(width, height, text) {
+		 $('#qrcode').qrcode({width: width,height: height,text: text});
+	}
 	
 });
-
